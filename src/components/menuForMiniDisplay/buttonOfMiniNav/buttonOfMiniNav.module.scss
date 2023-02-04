@@ -1,0 +1,29 @@
+#container {
+      height: 42px;
+      width: 42px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: start;
+      cursor: pointer;
+      padding: 4px;
+}
+
+.line {
+      height: 3px;
+      transition: all 0.2s ease;
+      background: white;
+}
+
+#lineTop {
+      width: 40px;
+      transform-origin: top left;
+      margin-bottom: 5px;
+}
+
+#lineBottom {
+      width: 25px;
+      transform-origin: top left;
+      margin-top: 10px;
+      color: white;
+}
