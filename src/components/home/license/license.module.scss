@@ -1,0 +1,213 @@
+img {
+      width: 100%;
+      height: 100%;
+}
+
+body {
+      margin: 0;
+      padding: 0;
+}
+
+#containerOfLicense {
+      display: grid;
+      place-items: center;
+      width: 100%;
+      min-height: 100vh;
+      height: auto;
+      background-color: #181D2B;
+      margin: 0;
+
+      h2 {
+            margin: 0;
+            padding: 50px 0;
+            text-align: center;
+            font-size: 2em;
+            color: rgb(255, 255, 255);
+
+            span {
+                  color: blue;
+            }
+      }
+
+      #containerOfWritingsAndIcons {
+            width: 70%;
+            display: grid;
+            grid-auto-flow: row;
+            grid-template-columns: repeat(3, auto);
+            place-items: center;
+            justify-content: space-between;
+
+            .eachContainerWritingsAndIcons {
+                  display: grid;
+                  column-gap: 10px;
+                  grid-template-columns: repeat(2, auto);
+                  justify-content: space-evenly;
+                  align-items: center;
+
+                  p {
+                        color: rgb(255, 255, 255);
+                        font-size: 1.3em;
+                  }
+            }
+      }
+
+      #containerOfMainImgInLicense {
+            width: 70%;
+            min-height: 80vh;
+            display: grid;
+            place-items: center;
+            margin: 5% auto;
+      }
+
+
+
+      #buttonsContainerOfLicense {
+            width: 100%;
+            height: 100px;
+            display: grid;
+            grid-template-columns: repeat(2, auto);
+            place-items: center;
+            justify-content: center;
+            text-align: center;
+            column-gap: 10px;
+            box-sizing: border-box;
+
+            #firstButtonOfLicense {
+                  min-width: 200px;
+                  width: auto;
+                  height: 60px;
+                  background-image: -webkit-gradient(linear, left top, right top, from(#1e6aff), to(#3a36ff));
+                  color: white;
+                  border: none;
+                  border-radius: 100px;
+                  cursor: pointer;
+            }
+
+            #secondButtonOfLicense {
+                  min-width: 200px;
+                  width: auto;
+                  height: 60px;
+                  background: #252C41;
+                  color: white;
+                  border: none;
+                  border-radius: 100px;
+                  cursor: pointer;
+            }
+
+            #firstButtonOfLicense:hover {
+                  border: 1px solid hsla(0, 0%, 100%, 0.6);
+                  opacity: 0.6;
+                  transition: 0.2s;
+            }
+
+            #secondButtonOfLicense:hover {
+                  border: 1px solid hsla(0, 0%, 100%, 0.6);
+                  opacity: 0.5;
+                  transition: 0.2s;
+            }
+      }
+}
+
+@media screen and (max-width: 1500px) {
+      #containerOfLicense {
+            h2 {
+                  font-size: 1.8em;
+            }
+
+            #containerOfWritingsAndIcons {
+                  .eachContainerWritingsAndIcons {
+                        p {
+                              color: rgb(255, 255, 255);
+                              font-size: 1em;
+                        }
+                  }
+            }
+      }
+}
+
+@media screen and (max-width: 1200px) {
+      #containerOfLicense {
+            #containerOfWritingsAndIcons {
+                  justify-content: center;
+                  gap: 20px;
+
+                  .eachContainerWritingsAndIcons {
+                        p {
+                              color: rgb(255, 255, 255);
+                              font-size: 0.9em;
+                        }
+                  }
+
+                  #lastWritingsAndIcons {
+                        grid-column: span 2;
+                  }
+            }
+
+            #containerOfMainImgInLicense {
+                  min-height: 65vh;
+            }
+      }
+}
+
+@media screen and (max-width: 900px) {
+      #containerOfLicense {
+            width: 100%;
+
+            h2 {
+                  width: 90%;
+                  font-size: 1.6em;
+                  place-items: start;
+                  align-content: start;
+                  padding: 20px 0;
+                  text-align: left;
+            }
+
+            #containerOfWritingsAndIcons {
+                  width: 90%;
+                  grid-template-columns: repeat(1, auto);
+                  text-align: left;
+                  place-items: start;
+                  justify-content: start;
+
+                  .eachContainerWritingsAndIcons {
+                        p {
+                              color: rgb(255, 255, 255);
+                              font-size: 0.9em;
+                        }
+                  }
+
+                  #lastWritingsAndIcons {
+                        grid-column: span 1;
+                  }
+            }
+
+            #containerOfMainImgInLicense {
+                  min-height: 50vh;
+            }
+      }
+}
+
+@media screen and (max-width: 600px) {
+      #containerOfLicense {
+            #buttonsContainerOfLicense {
+                  width: 100%;
+                  height: auto;
+                  grid-template-columns: repeat(1, auto);
+                  row-gap: 15px;
+
+                  #firstButtonOfLicense {
+                        width: 90vw;
+                        height: 45px;
+                  }
+
+                  #secondButtonOfLicense {
+                        width: 90vw;
+                        height: 45px;
+                  }
+            }
+
+            #containerOfMainImgInLicense {
+                  min-height: 30vh;
+            }
+      }
+}

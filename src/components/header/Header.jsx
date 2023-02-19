@@ -1,5 +1,5 @@
 import styles from "../header/header.module.scss";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 import AnimatedRoutes from "../animation/AnimatedRoutes";
 import Pages from "../pages/Pages";
@@ -7,8 +7,18 @@ import { GiShinyOmega } from "react-icons/gi";
 import { GiSunRadiations } from "react-icons/gi";
 import ButtonOfMiniNav from "../menuForMiniDisplay/buttonOfMiniNav/ButtonOfMiniNav";
 import MainOfMiniMenu from "../menuForMiniDisplay/mainOfMiniMenu/MainOfMiniMenu";
+import { motion, useInView } from "framer-motion";
 
 const Header = () => {
+
+      const animationForHeader = {
+            hidden: {
+                  y: 80,
+            },
+            visible: {
+                  y: 0,
+            },
+      };
 
       const [isShown, setIsShown] = useState(false);
       const [isShownMiniMenu, setIsShownMiniMenu] = useState(false);
@@ -27,9 +37,25 @@ const Header = () => {
             document.addEventListener("click", () => setIsShown(false));
       }, []);
 
+      const ref = useRef(null);
+      const headerView = useInView(ref);
+
+      useEffect(() => {
+            headerView
+                  ? document.querySelector(`#${styles.headerContainer}`).display += "grid"
+                  : document.querySelector(`#${styles.headerContainer}`).display += "none";
+
+      }, [headerView]);
+
       return (
             <Router>
-                  <div id={styles.headerContainer}>
+                  <motion.div
+                        id={styles.headerContainer}
+                        variants={animationForHeader}
+                        initial="hidden"
+                        whileInView="visible"
+                        ref={ref}
+                  >
                         <header id={styles.header}>
                               <div id={styles.headerIconContainer}>
                                     <div id={styles.icon}><GiShinyOmega size="35px" color="#2166FF" /></div>
@@ -72,7 +98,7 @@ const Header = () => {
                                     </div>
                               </div>
                         </header>
-                  </div>
+                  </motion.div>
 
                   {isShown ? <Pages /> : null}
 

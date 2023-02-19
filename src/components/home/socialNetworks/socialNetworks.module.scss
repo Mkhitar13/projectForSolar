@@ -1,0 +1,125 @@
+body {
+      margin: 0;
+      padding: 0;
+}
+
+img {
+      width: 100%;
+      height: 100%;
+}
+
+#socialNetworksContainer {
+      width: 100%;
+      background-color: #181D2B;
+      display: grid;
+      place-items: center;
+      padding: 100px 0;
+
+      #insideOfBottomBorder {
+            display: grid;
+            justify-content: space-between;
+            grid-template-columns: auto 70%;
+            width: 90%;
+            padding: 50px 0;
+            box-sizing: border-box;
+
+            h3 {
+                  color: white;
+            }
+
+            #containerOfImages {
+                  display: grid;
+                  grid-template-columns: repeat(5, 120px);
+                  justify-content: space-between;
+                  width: 100%;
+
+                  .imgContainer {
+                        width: 100px;
+                        display: grid;
+                        justify-self: end;
+                  }
+            }
+      }
+
+      #borderBottomOfBottomBorder {
+            width: 80%;
+            height: 2px;
+            background-color: white;
+      }
+}
+
+@media screen and (max-width: 1300px) {
+      #socialNetworksContainer {
+            #insideOfBottomBorder {
+                  grid-template-columns: 80%;
+                  justify-content: center;
+
+                  h3 {
+                        display: grid;
+                        place-items: center;
+                        font-size: 25px;
+                  }
+
+                  #containerOfImages {
+                        display: grid;
+                        grid-template-columns: repeat(5, 120px);
+                        place-items: end;
+                  }
+            }
+      }
+}
+
+@media screen and (max-width: 1000px) {
+      #socialNetworksContainer {
+            width: 100%;
+
+            #insideOfBottomBorder {
+                  width: 100%;
+            }
+      }
+}
+
+@media screen and (max-width: 750px) {
+      #socialNetworksContainer {
+            #insideOfBottomBorder {
+                  grid-template-columns: 80%;
+                  justify-content: center;
+
+                  h3 {
+                        display: grid;
+                        place-items: center;
+                        font-size: 25px;
+                  }
+
+                  #containerOfImages {
+                        display: grid;
+                        grid-template-columns: repeat(2, 120px);
+                        justify-content: center;
+
+                        .imgContainer {
+                              padding: 20px 0;
+
+                        }
+
+                        #lastIcon {
+                              display: grid;
+                              grid-column: span 2;
+                              place-self: center;
+                        }
+
+                  }
+            }
+      }
+}
+
+@media screen and (max-width: 400px) {
+      #socialNetworksContainer {
+            #insideOfBottomBorder {
+                  h3 {
+                        display: grid;
+                        place-items: center;
+                        font-size: 18px;
+                  }
+            }
+      }
+}
