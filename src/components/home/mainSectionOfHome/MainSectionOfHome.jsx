@@ -1,8 +1,9 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useRef } from "react";
 import styles from "../mainSectionOfHome/mainSectionOfHome.module.scss";
+import { motion, useInView } from "framer-motion";
 import imgforhome from "../../../images/imgforhome.png";
-import { motion, useTransform, useInView } from "framer-motion";
 // import AOS from "aos";
+import { HalfCircle } from "../../../ready-made-items/ReadyMadeItems";
 
 const MainSectionOfHome = () => {
 
@@ -79,6 +80,8 @@ const MainSectionOfHome = () => {
                         viewport={{ once: true }}
                   >
                         <div id={styles.circleAnimationOfHome}>
+
+                              <HalfCircle />
                         </div>
 
                         <div

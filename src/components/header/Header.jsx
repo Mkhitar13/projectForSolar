@@ -1,7 +1,6 @@
 import styles from "../header/header.module.scss";
 import { useState, useEffect, useRef } from "react";
-import { BrowserRouter as Router, Link } from "react-router-dom";
-import AnimatedRoutes from "../animation/AnimatedRoutes";
+import { Link } from "react-router-dom";
 import Pages from "../pages/Pages";
 import { GiShinyOmega } from "react-icons/gi";
 import { GiSunRadiations } from "react-icons/gi";
@@ -23,6 +22,8 @@ const Header = () => {
       const [isShown, setIsShown] = useState(false);
       const [isShownMiniMenu, setIsShownMiniMenu] = useState(false);
       const [toggleOfTheMiniMenu, setToggleOfTheMiniMenu] = useState(false);
+      const ref = useRef(null);
+      const headerView = useInView(ref);
 
       const handleClick = () => {
             setIsShown(current => !current);
@@ -37,8 +38,6 @@ const Header = () => {
             document.addEventListener("click", () => setIsShown(false));
       }, []);
 
-      const ref = useRef(null);
-      const headerView = useInView(ref);
 
       useEffect(() => {
             headerView
@@ -48,7 +47,7 @@ const Header = () => {
       }, [headerView]);
 
       return (
-            <Router>
+            <div>
                   <motion.div
                         id={styles.headerContainer}
                         variants={animationForHeader}
@@ -58,7 +57,9 @@ const Header = () => {
                   >
                         <header id={styles.header}>
                               <div id={styles.headerIconContainer}>
-                                    <div id={styles.icon}><GiShinyOmega size="35px" color="#2166FF" /></div>
+                                    <div id={styles.icon}>
+                                          <GiShinyOmega size="35px" color="#2166FF" />
+                                    </div>
                                     <div id={styles.textByIcon}>SUN</div>
                               </div>
                               <nav>
@@ -73,8 +74,7 @@ const Header = () => {
                                     </div>
                                     <div className={styles.linkContainer} id={styles.pages} >
                                           <Link onMouseOver={() => handleClick()}>Pages</Link>
-                                          <span id={styles.iconForPages}><GiSunRadiations color="#2166FF" size="25px" /></span>
-
+                                          <span id={styles.iconForPages}><GiSunRadiations color="blue" size="25px" /></span>
                                     </div>
                                     <div className={styles.linkContainer}>
                                           <Link to="/services">Services</Link>
@@ -106,9 +106,7 @@ const Header = () => {
                         toggleOfTheMiniMenu={toggleOfTheMiniMenu}
                         setToggleOfTheMiniMenu={setToggleOfTheMiniMenu}
                   />
-
-                  <AnimatedRoutes />
-            </Router >
+            </div >
       )
 }
 export default Header;

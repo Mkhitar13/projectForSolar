@@ -1,3 +1,5 @@
+@import '../../../scssVaribles/variables.scss';
+
 img {
       width: 100%;
       height: 100%;
@@ -14,7 +16,7 @@ body {
       width: 100%;
       min-height: 100vh;
       height: auto;
-      background-color: #181D2B;
+      background-color: $BG-color;
       margin: 0;
 
       h2 {
@@ -73,25 +75,17 @@ body {
             box-sizing: border-box;
 
             #firstButtonOfLicense {
+                  @include blueButton;
                   min-width: 200px;
                   width: auto;
                   height: 60px;
-                  background-image: -webkit-gradient(linear, left top, right top, from(#1e6aff), to(#3a36ff));
-                  color: white;
-                  border: none;
-                  border-radius: 100px;
-                  cursor: pointer;
             }
 
             #secondButtonOfLicense {
+                  @include darkButton;
                   min-width: 200px;
                   width: auto;
                   height: 60px;
-                  background: #252C41;
-                  color: white;
-                  border: none;
-                  border-radius: 100px;
-                  cursor: pointer;
             }
 
             #firstButtonOfLicense:hover {

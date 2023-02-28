@@ -1,9 +1,12 @@
+@import '../../scssVaribles/variables.scss';
+
 #headerContainer {
       display: grid;
       align-content: center;
       width: 100%;
       height: 10vh;
-      z-index: 3;
+      z-index: 100;
+      background-color: $BG-color;
 
       #header {
             width: 100%;
@@ -21,6 +24,13 @@
                   align-content: end;
                   place-self: center;
                   cursor: pointer;
+
+                  &:hover {
+                        opacity: 0.7;
+                        transition: 0.3s;
+                        padding: 18px 8px;
+                        cursor: pointer;
+                  }
 
                   #icon {
                         size: 100px;
@@ -40,12 +50,6 @@
                   }
             }
 
-            #headerIconContainer:hover {
-                  opacity: 0.7;
-                  transition: 0.3s;
-                  padding: 18px 8px;
-                  cursor: pointer;
-            }
 
             nav {
                   display: grid;
@@ -67,27 +71,25 @@
                               font-size: 17px;
                         }
 
+                        &:hover>#iconForPages {
+                              transform: rotate(45deg);
+                              transition: 1s;
+                              cursor: pointer;
+                        }
+
+                        &:hover {
+                              a {
+                                    transition: 1s;
+                                    font-size: 19px;
+                                    color: #2166FF;
+                              }
+                        }
                   }
 
                   #iconForPages {
                         margin-left: 5px;
                         transition: 1s;
                   }
-
-                  .linkContainer:hover>#iconForPages {
-                        transform: rotate(45deg);
-                        transition: 1s;
-                        cursor: pointer;
-                  }
-
-                  .linkContainer:hover {
-                        a {
-                              transition: 1s;
-                              font-size: 19px;
-                              color: #2166FF;
-                        }
-                  }
-
 
                   #pages {
                         display: grid;
@@ -126,26 +128,17 @@
                         margin: 0 15px;
 
                         button {
+                              @include blueButton;
+
+                              width: 150px;
+                              height: 50px;
                               display: grid;
                               place-self: center;
                               align-content: center;
                               align-items: center;
-                              background-color: #2166FF;
-                              color: white;
-                              border: none;
-                              cursor: pointer;
-                              border-radius: 100px;
-                              padding: 25px 20px;
-                              width: 150px;
-                              height: 10px;
                         }
                   }
 
-                  #headerButton:hover {
-                        opacity: 0.7;
-                        transition: 0.3s;
-                        padding: 18px 8px;
-                  }
 
                   #menuForMiniDisplay {
                         display: none;
@@ -163,7 +156,6 @@
             #header {
                   display: grid;
                   grid-template-columns: auto auto;
-                  // margin: 100px;
                   justify-content: space-between;
 
                   nav {
@@ -193,7 +185,6 @@
             #header {
                   display: grid;
                   grid-template-columns: auto auto;
-                  // margin: 100px;
                   justify-content: space-between;
 
                   nav {
@@ -208,8 +199,6 @@
                         #menuForMiniDisplay {
                               display: grid;
                         }
-
-                        // width: 200px;
 
                         #headerButton {
                               display: none;

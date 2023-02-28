@@ -6,6 +6,7 @@ import fourthImgOfOurCommodity from "../../../images/fourthImgOfOurCommodity.png
 import fifthImgOfOurCommodity from "../../../images/fifthImgOfOurCommodity.png";
 import sixthImgOfOurCommodity from "../../../images/sixthImgOfOurCommodity.png";
 
+import { HalfCircle, HalfSquare } from "../../../ready-made-items/ReadyMadeItems";
 
 import { useEffect, useRef } from "react";
 import { motion, useInView } from "framer-motion";
@@ -31,14 +32,14 @@ const OurCommodity = () => {
       };
 
       const ref = useRef(null);
-      const OurCommodityView = useInView(ref);
+      const ourCommodityView = useInView(ref);
 
       useEffect(() => {
-            OurCommodityView
+            ourCommodityView
                   ? document.querySelector(`#${styles.containerOfOurCommodity}`).display += "grid"
                   : document.querySelector(`#${styles.containerOfOurCommodity}`).display += "none";
 
-      }, [OurCommodityView]);
+      }, [ourCommodityView]);
 
       return (
             <section id={styles.parentCotainerOfOurCommodity}>
@@ -50,7 +51,7 @@ const OurCommodity = () => {
                         ref={ref}
                   >
 
-                        <div id={styles.circleOfOurCommodity}></div>
+                        <div id={styles.circleOfOurCommodity}><HalfCircle /></div>
 
                         <motion.div
                               id={styles.mainTitleOfOurCommodity}
@@ -108,9 +109,7 @@ const OurCommodity = () => {
                                     </div>
                               </div>
                               <div id={styles.borderBottomOfOurCommodityFirstLayer}>
-                                    <div id={styles.secondLayer}>
-                                          <div id={styles.thirdLayer}></div>
-                                    </div>
+                                    <HalfSquare />
                               </div>
                         </div>
                         <motion.div id={styles.containerOfOurCommodityButtons}>

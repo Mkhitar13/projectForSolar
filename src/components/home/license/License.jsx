@@ -1,9 +1,8 @@
-// import LicenseStyles from "./ .module.scss";
 import LicenseStyles from "../license/license.module.scss";
 import imgForLicense from "../../../images/imgForLicenseSection.png";
 import { VscStarEmpty } from "react-icons/vsc";
-import { useEffect, useState, useRef } from "react";
-import { motion, useTransform, useInView } from "framer-motion";
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 
 const License = () => {
 
@@ -33,7 +32,6 @@ const License = () => {
             }),
       };
       return (
-
             <section id={LicenseStyles.containerOfLicense}>
                   <motion.h2
                         variants={animationForLicenseWritings}

@@ -1,0 +1,37 @@
+$BG-color: #181D2B;
+
+@mixin blueButton {
+      width: 200px;
+      height: 60px;
+      background-image: -webkit-gradient(linear, left top, right top, from(#1e6aff), to(#3a36ff));
+      color: rgb(255, 255, 255);
+      border: none;
+      border-radius: 100px;
+      cursor: pointer;
+
+      &:hover {
+            border: 1px solid hsla(0, 0%, 100%, 0.6);
+            opacity: 0.6;
+            transition: 0.2s;
+      }
+}
+
+;
+
+@mixin darkButton {
+      width: 200px;
+      height: 60px;
+      background: #252C41;
+      color: white;
+      border: none;
+      border-radius: 100px;
+      cursor: pointer;
+
+      &:hover {
+            border: 1px solid hsla(0, 0%, 100%, 0.6);
+            opacity: 0.6;
+            transition: 0.2s;
+      }
+}
+
+;
